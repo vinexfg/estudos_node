@@ -1,7 +1,10 @@
 import bcrypt from "bcrypt"
 import promptModule from "prompt-sync"
 import { MongoClient } from "mongodb"
-
+import readline from "readline"
+import { stdin, stdout } from "process"
+import { promisify } from "util"
+import { url } from "inspector"
 
 
 const dbUrl = 'mongodb://localhost:27017'
@@ -9,7 +12,7 @@ const client = new MongoClient(dbUrl)
 const prompt = promptModule()
 
 let hasPasswords = false
-let passwordsCollection, authCollection
+let passwordCollection, authCollection
 const dbName = "passwordManeger"
 
 
@@ -19,7 +22,7 @@ const main = async () => {
         console.log('connect sucessfully to server');
         const db = client.db(dbName)
         authCollection = db.collection("auth")
-        passwordsCollection = db.collection("password")
+        passwordCollection = db.collection("password")
         const hashedPassword = await authCollection.findOne({ type: "auth" })
         hasPasswords = !!hashedPassword
 
@@ -31,17 +34,36 @@ const main = async () => {
 
 await main()
 if (!hasPasswords) await promptNewPassword()
-else await promptOldPassword()
+else await promptPassword()
+
+const rl = readline.createInterface({
+    input: stdin,
+    output: stdout
+})
+
+const readlineAsync = promisify(rl.question).bind(rl)
+
+
+const saltRounds = async () => {
+    const ronds = await readlineAsync("digite o numero de rodadas: ")
+    return ronds
+}
+
+
 
 
 const saveNewPassword = async (password) => {
-    const hash = await bcrypt.hash(password, 10)
-    await authCollection.insertOne({ type: "auth", hash })
+    const hash = await bcrypt.hash(password, saltRounds)
+    await authCollection.updateOne(
+        { type: "auth" },
+        { $set: { type: "auth", hash } },
+        { upsert: true }
+    )
     hasPasswords = true
-    console.log('Password has been saved!')
+    console.log('senha salva')
 }
 
-const compareHashedPassword = async (password) => {
+const compareHashPassword = async (password) => {
     const authData = await authCollection.findOne({ type: "auth" })
     if (!authData?.hash) {
         return false
@@ -51,23 +73,23 @@ const compareHashedPassword = async (password) => {
 }
 
 const promptNewPassword = async () => {
-    const response = prompt('Enter a new password: ')
+    const response = prompt('digite uma senha: ')
     await saveNewPassword(response)
     await showMenu()
 }
 
 
-const promptOldPassword = async () => {
+const promptPassword = async () => {
     let verifield = false
     while (!verifield) {
-        const response = prompt('Enter password: ')
-        const result = await compareHashedPassword(response)
+        const response = prompt('digite sua senha: ')
+        const result = await compareHashPassword(response)
         if (result) {
-            console.log('Password verified!');
+            console.log('password verifield');
             verifield = true
             await showMenu()
         } else {
-            console.log('Incorrect password.');
+            console.log('senha incorreta');
 
         }
     }
@@ -76,26 +98,28 @@ const promptOldPassword = async () => {
 
 const showMenu = async () => {
     console.log(`
-1. View passwords
-2. Manage new password
-3. Verify password
-4. Exit`);
+        1. view password
+        2. Manege new password
+        3. verify password
+        4. Exit
+        `);
 
     const response = prompt(">")
     switch (response) {
         case "1":
-            await viewPasswords();
+            await viewPassword();
             break;
         case "2":
-            await promptManageNewPassword()
+            await promptManegeNewPassword()
             break;
         case "3":
-            await promptOldPassword()
+            await promptNewPassword()
             break
         case "4":
-            process.exit()
+            await client.close()
+            process.exit(0)
         default:
-            console.log("That's an invalid response.");
+            console.log('this is an invalid response');
             await showMenu()
 
     }
@@ -104,11 +128,15 @@ const showMenu = async () => {
 
 
 
-const viewPasswords = async () => {
-    const passwords = await passwordsCollection.find({}).toArray()
+const viewPassword = async () => {
+    const passwords = await passwordCollection.find({}).toArray()
+
+    if (passwords.length === 0) {
+        console.log('nenhuma senha cadastrada')
+    }
 
     passwords.forEach(({ source, password }, index) => {
-        console.log(`${index + 1}. ${source} => ${password}`)
+        console.log(`${index + 1}, ${source} => ${password}`)
     })
 
     await showMenu()
@@ -116,10 +144,10 @@ const viewPasswords = async () => {
 }
 
 
-const promptManageNewPassword = async () => {
-    const source = prompt("Enter name for password: ")
-    const password = prompt("Enter password to save: ")
-    await passwordsCollection.findOneAndUpdate(
+const promptManegeNewPassword = async () => {
+    const source = prompt("enter new password: ")
+    const password = prompt("enter password to save: ")
+    await passwordCollection.findOneAndUpdate(
         { source },
         {
             $set: { password }
@@ -129,7 +157,7 @@ const promptManageNewPassword = async () => {
             upsert: true
         }
     )
-    console.log(`Password for ${source} has been saved!`);
+    console.log(`password for ${source} has ben saved  `);
     await showMenu()
 };
 
