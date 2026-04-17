@@ -1,14 +1,6 @@
 
 
 
-let date = new Date("2024-07-02T14:30:00")
-
-
-
-
-
-console.log(date.toLocaleDateString());
-console.log(date.toLocaleTimeString());
 
 
 
@@ -25,6 +17,108 @@ console.log(date.toLocaleTimeString());
 
 
 
+
+
+
+// const dateWithTimezone = new Date()
+// console.log(dateWithTimezone.getMonth() + 1);
+
+// console.log(dateWithTimezone.toLocaleString().padStart(2, "0"))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// console.log(date.toLocaleDateString());
+// console.log(date.toLocaleTimeString());
+
+// console.log(date.toLocaleString());
+
+
+
+
+// console.log(date.toLocaleString("pt-BR"), {
+//     dateStyle: "short",
+
+// });
+
+
+
+
+
+
+// console.log(date.toLocaleString("pt-BR", {
+//     dateStyle: 'short'
+// }));
+
+
+
+// console.log(date.toLocaleString("pt-BR", {
+//     dateStyle: "medium"
+// }));
+
+// console.log(date.toLocaleString("pt-BR", {
+//     dateStyle: "long"
+// }));
+
+// console.log(date.toLocaleString("pt-BR", {
+//     dateStyle: "full"
+// }));
+
+
+// console.log(date.toLocaleString("pt-BR", {
+//     day: "2-digit",
+//     month: "2-digit",
+//     hour: "2-digit",
+//     minute: "2-digit"
+// }));
+
+
+// console.log(date.toLocaleString("pt-BR"), {
+//     dateStyle: "lon",
+
+// });
+
+
+// let amount = 12.5
+
+
+
+
+// console.log(amount.toLocaleString("pt-BR", {
+//     style: "currency",
+//     currency: "BRL",
+// }));
+
+
+
+
+// const currentLocale = Intl.DateTimeFormat().resolvedOptions()
+
+
+// console.log(new Intl.DateTimeFormat("pt-BR").format(new Date()));
+// console.log(new Intl.DateTimeFormat("en-US").format(new Date()));
+
+
+// // OBTEM A DIFERanca em minutos do time zone
+// const date = new Date()
+// console.log(date.getTimezoneOffset());
+// // aqui a diferenca em horas
+// console.log(date.getTimezoneOffset() / 60);
 
 
 
