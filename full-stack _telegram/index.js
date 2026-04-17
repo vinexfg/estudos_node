@@ -25,11 +25,13 @@ let month = (date.getMonth() + 1).toString().padStart(2, "0")
 
 let day = date.getDay().toString().padStart(2, "0")
 
-
-
+let day2 = date.getDay().toString().padStart('2', "0")
+let years = date.getFullYear().toString().padStart('4', "0")
 let year = date.getFullYear()
 let hour = date.getHours()
 let minute = date.getMinutes()
 
 
-console.log(`${day}/ ${month}/ ${minute} às ${hour}:${minute}seg`)
+// console.log(`${day}/ ${month}/ ${minute} às ${hour}:${minute}seg`)
+
+console.log(years);
