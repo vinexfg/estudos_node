@@ -2,13 +2,19 @@ import bcrypt from "bcrypt"
 import promptModule from "prompt-sync"
 
 const prompt = promptModule()
-const mockDB = { password: {}, hash: null }
+const mockDB = { password: {} }
 
 
 const saveNewPassword = (password, rounds) => {
-    mockDB.hash = bcrypt.hashSync(password, rounds)
-    console.log('Senha salva com sucesso!');
-    showMenu()
+    const hash = bcrypt.hashSync(password, rounds)
+
+    mockDB.auth = {
+        type: auth,
+        hash: hash,
+        saltRounds: rounds
+    }
+    console.log('senha salva com sucesso!');
+
 }
 
 const compareHashedPassword = async (password) => {
