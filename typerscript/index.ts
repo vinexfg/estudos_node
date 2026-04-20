@@ -1,1 +1,1 @@
-console.blub("noite muito bela");
+console.log("noite muito bela");
