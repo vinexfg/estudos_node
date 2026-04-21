@@ -36,18 +36,6 @@ await main()
 if (!hasPasswords) await promptNewPassword()
 else await promptPassword()
 
-// const rl = readline.createInterface({
-//     input: stdin,
-//     output: stdout
-// })
-
-// const readlineAsync = promisify(rl.question).bind(rl)
-
-
-// const saltRounds = async () => {
-//     const ronds = await readlineAsync("digite o numero de rodadas: ")
-//     return ronds
-// }
 
 
 
