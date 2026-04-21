@@ -1,0 +1,15 @@
+{
+  "name": "alvaro",
+  "version": "1.0.0",
+  "description": "explicacao",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^6.0.0"
+  }
+}
