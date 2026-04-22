@@ -13,7 +13,7 @@ console.log(result);
 
 
 
-const product = [
+const products = [
     {
         description: "teclado", price: 100, promotion = true
     },
@@ -26,4 +26,7 @@ const product = [
 ]
 
 
-const promotion = 
+const promotion = products.filter((product) => product === true)
+
+
+console.log(promotion);
