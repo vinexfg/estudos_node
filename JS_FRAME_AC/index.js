@@ -15,6 +15,15 @@ console.log(result);
 
 const product = [
     {
-        description: "teclado", price: 100
+        description: "teclado", price: 100, promotion = true
+    },
+    {
+        description: "mouse", price: 70, promotion = false
+    },
+    {
+        description: "Monitor", price: 900, promotion = true
     }
 ]
+
+
+const promotion = 
