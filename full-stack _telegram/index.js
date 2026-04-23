@@ -35,9 +35,6 @@
 // }
 
 
-
-
-
 class MyCustomError {
     constructor(message) {
         this.message = "CLASSE DE ERRO CUSTOMIZADDA:" + message
@@ -55,4 +52,4 @@ try {
         console.log('nao foi possivel executar! ');
 
     }
-}aa adadadadad as seu nome e vinicius 
+}
