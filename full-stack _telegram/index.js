@@ -45,7 +45,6 @@ class MyCustomError {
 }
 
 
-
 try {
     throw new MyCustomError("erro personalizado")
 } catch (err) {
@@ -56,4 +55,4 @@ try {
         console.log('nao foi possivel executar! ');
 
     }
-}
+}aa adadadadad as seu nome e vinicius 
