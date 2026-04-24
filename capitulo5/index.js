@@ -1,7 +1,7 @@
 import Parser from "rss-parser"
 
 
-
+const parser = Parser()
 
 
 const main = async ()=>{
