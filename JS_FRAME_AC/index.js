@@ -29,8 +29,8 @@ const products = [
 const promotion = products.filter((product) => product === true)
 
 
-console.log(promotion); me
+console.log(promotion); 
 
 
-a 
+
 const numbers = []
