@@ -34,10 +34,32 @@
 // const values = [4,6,8, 12]
 
 
-const values = [4, 6, 8, 12];
-console.log(values.findIndex((value)=> values > 4));
+// const values = [4, 6, 8, 12];
+// console.log(values.findIndex((value)=> values > 4));
 
-console.log(values.findIndex((value) => value > 4));
+// console.log(values.findIndex((value) => value > 4));
 
 
 // console.log(values.findIndex((value)=>  value > 4 ));
+
+
+
+
+const pessoas = [
+  { id: 1, nome: "Ana", idade: 22 },
+  { id: 2, nome: "Carlos", idade: 17 },
+  { id: 3, nome: "Marina", idade: 30 },
+  { id: 4, nome: "João", idade: 15 }
+];
+
+
+const idadeMaior = pessoas.find((value)=> value.idade > 18)
+
+const resultado = ()=>{
+    if(idadeMaior){
+        console.log(`vc esta qualificado ${pessoas.value}`);
+    }
+}
+
+
+resultado()
