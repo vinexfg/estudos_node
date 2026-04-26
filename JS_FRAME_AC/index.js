@@ -121,8 +121,41 @@
 
 
 
-const nums = [10, 20, 30];
+// const nums = [10, 20, 30];
 
 
-const resultado = nums.findIndex((num)=> num === 20 )
-console.log(resultado);
+// const resultado = nums.findIndex((num)=> num === 20 )
+// console.log(resultado);
+
+
+
+// const ages = [15,30,39, 29]
+
+
+// vericican se todas as idades soa maiores de 18
+
+// every 'e se todos os intens atendem a codicao
+// const result  = ages.every((age)=> age>= 18 )
+
+
+
+// const ages = [15,30,39, 29]
+
+
+// const result = ages.some((age)=> age < 18)
+// console.log(result);
+
+
+const values = [1,2,3,4,5]
+
+
+const sume = values.reduce((acumulator, currentValue)=>{
+    console.log(`Acumulator ${acumulator}`);
+    console.log(`currentValue ${currentValue}`);
+
+    return acumulator + currentValue
+    
+    
+}, 0)
+
+console.log(sume);
