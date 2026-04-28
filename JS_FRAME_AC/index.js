@@ -182,8 +182,43 @@
 // const result  = nums.map((n, i)=> i)
 
 // console.log( result);
-const nomes = ["ana","joão"];
+// const nomes = ["ana","joão"];
 
-const result  = nomes.map((n)=> n.length)
+// const result  = nomes.map((n)=> n.length)
 
-console.log(result);
+// console.log(result);
+
+
+
+// const address1 = {
+//     street: "av. brasil",
+//     number: 20
+// }
+
+// // isto é uma referencia 
+// const address2 = {...address1, number = 30}
+
+// address2.number = 30
+
+
+// console.log(address1);
+// console.log(address2);
+
+
+
+const htmlCourse = {
+    course: "HTML",
+    students: [{name: "vinicius", email: "viniciussilva@gmail.com"}]
+}
+
+
+
+const jsCouser =  {
+    ...htmlCourse,
+    course: "Javascript"
+}
+// vai modificar o htmlCOuse tambem pq é uma referencia e nao uma copia
+jsCouser.students.push({name: "vini", email: 'vin@gmail.com'})
+
+
+console.log(htmlCourse, jsCouser);
