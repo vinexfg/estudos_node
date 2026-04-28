@@ -146,16 +146,44 @@
 // console.log(result);
 
 
-const values = [1,2,3,4,5]
+// const values = [1,2,3,4,5]
 
 
-const sume = values.reduce((acumulator, currentValue)=>{
-    console.log(`Acumulator ${acumulator}`);
-    console.log(`currentValue ${currentValue}`);
+// const sume = values.reduce((acumulator, currentValue)=>{
+//     console.log(`Acumulator ${acumulator}`);
+//     console.log(`currentValue ${currentValue}`);
 
-    return acumulator + currentValue
+//     return acumulator + currentValue
     
     
-}, 0)
+// }, 0)
 
-console.log(sume);
+// console.log(sume);
+
+
+
+// const numeros = [1, 2, 3, 4, 5];
+
+// const result =  numeros.filter( num => num % 2 === 0)
+
+// console.log(result);
+
+
+// const nomes = ["ana","bruno"];
+
+// const result = nomes.map((n)=> n.toUpperCase())
+// console.log(result);
+
+
+
+// const nums = [1,2,3];
+
+
+// const result  = nums.map((n, i)=> i)
+
+// console.log( result);
+const nomes = ["ana","joão"];
+
+const result  = nomes.map((n)=> n.length)
+
+console.log(result);
