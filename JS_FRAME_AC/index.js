@@ -218,6 +218,10 @@ const jsCouser =  {
     course: "Javascript"
 }
 // vai modificar o htmlCOuse tambem pq é uma referencia e nao uma copia
+
+
+// deep copy (copia profunda)
+
 jsCouser.students.push({name: "vini", email: 'vin@gmail.com'})
 
 
