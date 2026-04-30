@@ -292,35 +292,69 @@
 // deepFreeze(book)
 
 
-const book = {
-    title: "objetos imutaveis",
-    category: "javascript",
-    author: {
-        name: 'vinicius',
-        email: 'viniciusalmeida@gmail.com'
-    },
+// const book = {
+//     title: "objetos imutaveis",
+//     category: "javascript",
+//     author: {
+//         name: 'vinicius',
+//         email: 'viniciusalmeida@gmail.com'
+//     },
+// }
+
+
+// const updatedBook = {
+//     ...book,
+//     title: "Criando um Front-end moderno com HTML",
+//     category: "html",
+//     type: "programming",
+// }
+
+
+// // object intacto
+// console.log(book)
+
+
+// // Modified;
+
+// console.log(updatedBook);
+
+
+// // Utilizando operador de desesturturcao (rest operator) para remover propriedades
+// // no primeiro caso eue tira a categoria mas é estranho isso ai 
+// const {category, ...bookWithoutCategory } = book
+
+// console.log(bookWithoutCategory);
+
+
+
+// setTimeout(()=>{
+//     console.log('ola, tudo bem');
+    
+// }, 3000)
+
+
+
+function asyncFunction(){
+    return new Promise((resolve, reject)=>{
+        //simula uma operacao assicrona
+        setTimeout(()=>{
+        const isSucess = true
+
+        if(isSucess){
+            resolve("a operacao foi comconclida com sucesso !")
+        }else{
+            reject("algo deu errado")
+        }
+        }, 3000) // simluma uma operacoa que leva 3 segundo
+    })
 }
 
-
-const updatedBook = {
-    ...book,
-    title: "Criando um Front-end moderno com HTML",
-    category: "html",
-    type: "programming",
-}
-
-
-// object intacto
-console.log(book)
-
-
-// Modified;
-
-console.log(updatedBook);
-
-
-// Utilizando operador de desesturturcao (rest operator) para remover propriedades
-// no primeiro caso eue tira a categoria mas é estranho isso ai 
-const {category, ...bookWithoutCategory } = book
-
-console.log(bookWithoutCategory);
+console.log('funcao aassicrona..')
+asyncFunction().then((response)=>{
+    console.log("sucesso:", response );
+}).catch((error)=>{
+    console.log("error:", error);
+    
+}).finally(()=>{
+    console.log('fim da execucao');
+})
