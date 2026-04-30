@@ -25,12 +25,11 @@ function asyncFunction(){
 }
 
 
-async function fetch() {
+const fetch = async ()=>{
     const response = await asyncFunction()
     console.log(response);
     
 }
-
 
 // console.log('funcao asssicrona..');
 // asyncFunction().then((response)=>{
