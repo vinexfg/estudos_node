@@ -24,3 +24,7 @@ nums = [10, 20, 30]
 
 index = next((i for i, n in enumerate(nums) if n == 20), -1)
 print(index)
+
+
+
+for numero, indexx
