@@ -19,12 +19,20 @@
 
 
 
-nums = [10, 20, 30]
+# nums = [10, 20, 30]
 
 
-index = next((i for i, n in enumerate(nums) if n == 20), -1)
-print(index)
+# index = next((i for i, n in enumerate(nums) if n == 20), -1)
+# print(index)
 
 
 
-for numero, indexx
+# for numero, indexx
+
+
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        s1 = [c.lower() for c in s if c.isalnum()]
+        s2 = s1[:: -1]
+
+        return s1 == s2
