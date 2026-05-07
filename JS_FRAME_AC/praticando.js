@@ -46,3 +46,18 @@
 // })
 
 
+
+
+
+
+
+
+
+const promesa = Promise.resolve("deu certo");
+
+promesa.then((resultado)=>{
+    console.log(
+        resultado
+    );
+    
+})
