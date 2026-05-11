@@ -53,11 +53,27 @@
 
 
 
-const promesa = Promise.resolve("deu certo");
+// const promesa = Promise.resolve("deu certo");
 
-promesa.then((resultado)=>{
-    console.log(
-        resultado
-    );
+// promesa.then((resultado)=>{
+//     console.log(
+//         resultado
+//     );
     
-})
+// })
+
+
+
+
+function asyncFunction(){
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            const isSucess = true
+
+            if(isSucess){
+                resolve("operacao concluida com sucesso")
+            }
+            return reject('algo deu errado')
+        }, 3000)
+    })
+}
