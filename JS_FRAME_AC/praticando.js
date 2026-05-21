@@ -7,7 +7,6 @@
 //     },
 // }
 
-
 // function deepFreeze(object){
 //     const props = Reflect.ownKeys(object)
 //     for(const prop  of props){
@@ -16,7 +15,7 @@
 //         if(value && typeof value === 'object' || typeof value === 'function'){
 //             deepFreeze(value)
 //         }
-        
+
 //     }
 
 //     return Object.freeze(object)
@@ -24,19 +23,16 @@
 
 // deepFreeze(book)
 
-
-
 /// primeiro imediatamente
 // console.log(1);
-// // executa antes das promessas 
+// // executa antes das promessas
 // queueMicrotask(()=>{
 //     console.log(2)
 // })
 
-
 // setTimeout(()=>{
 //     console.log(3);
-    
+
 // }, 1000)
 // /// segundo  imediatamente
 // console.log(4);
@@ -45,35 +41,30 @@
 //     console.log(5);
 // })
 
-
-
-
-
-
-
-
-
 // const promesa = Promise.resolve("deu certo");
 
 // promesa.then((resultado)=>{
 //     console.log(
 //         resultado
 //     );
-    
+
 // })
 
+// function asyncFunction(){
+//     return new Promise((resolve, reject)=>{
+//         setTimeout(()=>{
+//             const isSucess = true
 
+//             if(isSucess){
+//                 resolve("operacao concluida com sucesso")
+//             }
+//             return reject('algo deu errado')
+//         }, 3000)
+//     })
+// }
 
-
-function asyncFunction(){
-    return new Promise((resolve, reject)=>{
-        setTimeout(()=>{
-            const isSucess = true
-
-            if(isSucess){
-                resolve("operacao concluida com sucesso")
-            }
-            return reject('algo deu errado')
-        }, 3000)
-    })
+function buscarUsuarios() {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(["vinicius", "vini"]), 1000);
+  });
 }
