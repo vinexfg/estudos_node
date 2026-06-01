@@ -13,4 +13,4 @@ p = Pessoa("Maria")
 P = Pessoa("joao")
 
 
-gc.collect()
+gc.collect()a
