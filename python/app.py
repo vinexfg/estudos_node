@@ -8,7 +8,7 @@ class Pessoa:
     def __del__(self):
         print(f"{nome} foi apagada da memoria")
 
-
+gc.collect()
 p = Pessoa("Maria")
 P = Pessoa("joao")
 
