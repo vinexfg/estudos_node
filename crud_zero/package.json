@@ -1,16 +1,19 @@
 {
-  "name": "typerscript",
+  "name": "crud_zero",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "type": "module",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "module",
   "devDependencies": {
-    "typescript": "^6.0.3"
+    "tsx": "^4.22.4"
+  },
+  "dependencies": {
+    "fastify": "^5.8.5"
   }
 }
