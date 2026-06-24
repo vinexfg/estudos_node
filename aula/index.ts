@@ -9,6 +9,9 @@ function criaPessoa(
   return {
     nome,
     sobrenome,
+    nomeCompleto() {
+      return `${this.nome} ${sobrenome}`;
+    },
     falar(assunto: string) {
       return `${this.nome} está falando sobre ${assunto}`;
     },
