@@ -1,5 +1,3 @@
-import { log } from "node:console";
-
 function criaPessoa(
   nome: string,
   sobrenome: string,
@@ -21,9 +19,13 @@ function criaPessoa(
       const indice = this.peso / this.altura ** 2;
       return indice.toFixed(2);
     },
+    set nomeCompletoo(valor: string) {
+      console.log(valor);
+    },
   };
 }
 
 const p1 = criaPessoa("vinicus", "almeida", 1.71, 61);
 console.log(p1.falar("falando sobre JS"));
-console.log(p1.imc);
+p1.nomeCompletoo = "Vinicius Almeida";
+
