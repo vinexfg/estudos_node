@@ -6,10 +6,12 @@ const pessoas = [
   { nome: "carlinhos", idade: 25 },
 ];
 
-const nomes = pessoas.map((obj) => {
-  return obj.nome;
-});
-const idades = pessoas.map(function(obj) => {
-    return obj.idade
-})
-console.log(nomes);
+// const nomes = pessoas.map((obj) => {
+//   return obj.nome;
+// });
+// const idades = pessoas.map(function(obj) {
+//     return obj.idade
+// })
+// console.log(nomes);
+
+const numeros = [1, 2, 3, 4, 5, 6, 7, 9, 8, 6, 12];
