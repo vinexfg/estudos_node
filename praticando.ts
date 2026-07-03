@@ -9,10 +9,27 @@
 // const numeros = [1, 2, 3, 4, 5, 6, 7, 9, 8, 6, 12];
 // a;
 
-const pessoas = [
-  { nome: "vinicus", idade: 62 },
-  { nome: "vitor", idade: 34 },
-  { nome: "carlos", idade: 20 },
-  { nome: "vini", idade: 24 },
-  { nome: "carlinhos", idade: 25 },
-];
+// const pessoas = [
+//   { nome: "vinicus", idade: 62 },
+//   { nome: "vitor", idade: 34 },
+//   { nome: "carlos", idade: 20 },
+//   { nome: "vini", idade: 24 },
+//   { nome: "carlinhos", idade: 25 },
+// ];
+
+// const maisVelha = pessoas.reduce(function (acumulador:, valor) {
+//   return valor.idade > acumulador.idade ? valor : acumulador;
+// });
+
+const numeros = [1, 2, 3, 4, 5, 6, 7, 9, 8, 6, 12];
+
+// const numerosPares = numeros.filter(function (valor: number) {
+//   return valor % 2 === 0;
+// });
+// console.log(numerosPares);
+
+const resultado = numeros.forEach(function (valor, indice) {
+  console.log(valor, indice);
+});
+
+console.log(resultado);
