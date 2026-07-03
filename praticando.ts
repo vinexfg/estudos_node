@@ -21,15 +21,15 @@
 //   return valor.idade > acumulador.idade ? valor : acumulador;
 // });
 
-const numeros = [1, 2, 3, 4, 5, 6, 7, 9, 8, 6, 12];
+// const numeros = [1, 2, 3, 4, 5, 6, 7, 9, 8, 6, 12];
 
-// const numerosPares = numeros.filter(function (valor: number) {
-//   return valor % 2 === 0;
+// // const numerosPares = numeros.filter(function (valor: number) {
+// //   return valor % 2 === 0;
+// // });
+// // console.log(numerosPares);
+
+// const resultado = numeros.forEach(function (valor, indice) {
+//   console.log(valor, indice);
 // });
-// console.log(numerosPares);
 
-const resultado = numeros.forEach(function (valor, indice) {
-  console.log(valor, indice);
-});
-
-console.log(resultado);
+// console.log(resultado);
