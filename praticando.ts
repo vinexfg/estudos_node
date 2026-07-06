@@ -7,4 +7,3 @@ interface Produto {
 }
 
 function produtos(produto: Produto) {}
-a
