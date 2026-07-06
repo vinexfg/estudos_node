@@ -7,3 +7,4 @@ interface Produto {
 }
 
 function produtos(produto: Produto) {}
+c;
