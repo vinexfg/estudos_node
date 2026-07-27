@@ -1,24 +1,24 @@
+class PaymentProcessor:
+    def process_payment(self, amount: float) -> str:
+        if amount <= 0:
+            raise ValueError("O valor do pagamento deve ser positivo.")
+        self.validate(amount)
+        return f"Pagamento de R${amount:.2f} processado."
 
 
+class CreditCardProcessor(PaymentProcessor):
+    def validate(self, amount: float):
+        if amount > 1000:
+            raise ValueError("limite ta cheio")
 
-class Pedido:
-    def __init__(self, valor):
-        self.valor = valor
-        self.status = "pendente"
-
-    def aplicar_desconto(self, porcentual):
-        self.valor = self.valor - (self.valor * porcentual)    
-
-
-class ProcessadorDePedidos:
-    def processar_pedido(self, pedido):
-        if pedido.valor > 1000:
-            pedido.aplicar_descuonto(0.1)
-        pedido.status = 'processando'
-        return pedido
-
-pedido1 = Pedido(1500)
-processador = ProcessadorDePedidos()
-pedido_final = processador.processar_pedido(pedido1)
+def handle_payment(processor: PaymentProcessor, amount: float) -> None:
+    print(processor.process_payment(amount))
 
 
+default_processor = PaymentProcessor()
+credit_card_processor = CreditCardProcessor()
+
+handle_payment(default_processor, 20000)
+
+
+handle_payment(credit_card_processor, 20000)
